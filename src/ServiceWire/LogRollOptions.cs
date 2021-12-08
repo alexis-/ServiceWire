@@ -1,9 +1,9 @@
 ﻿namespace ServiceWire
 {
-    public enum LogRollOptions
-    {
-        Daily,
-        Hourly,
-        Size
-    }
+  public enum LogRollOptions
+  {
+    Daily,
+    Hourly,
+    Size
+  }
 }

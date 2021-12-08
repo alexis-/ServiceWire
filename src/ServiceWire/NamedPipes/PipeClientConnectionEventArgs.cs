@@ -1,14 +1,26 @@
-﻿using System;
-using System.IO.Pipes;
-
-namespace ServiceWire.NamedPipes
+﻿namespace ServiceWire.NamedPipes
 {
-    public class PipeClientConnectionEventArgs : EventArgs
+  using System;
+  using System.IO.Pipes;
+
+  public class PipeClientConnectionEventArgs : EventArgs
+  {
+    #region Constructors
+
+    public PipeClientConnectionEventArgs(NamedPipeServerStream pipeStream)
     {
-        public PipeClientConnectionEventArgs(NamedPipeServerStream pipeStream)
-        {
-            this.PipeStream = pipeStream;
-        }
-        public NamedPipeServerStream PipeStream { get; set; }
+      PipeStream = pipeStream;
     }
+
+    #endregion
+
+
+
+
+    #region Properties & Fields - Public
+
+    public NamedPipeServerStream PipeStream { get; set; }
+
+    #endregion
+  }
 }

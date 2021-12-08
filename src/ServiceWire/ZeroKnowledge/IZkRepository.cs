@@ -1,20 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace ServiceWire.ZeroKnowledge
+﻿namespace ServiceWire.ZeroKnowledge
 {
-    public interface IZkRepository
+  public interface IZkRepository
+  {
+    ZkPasswordHash GetPasswordHashSet(string username);
+  }
+
+  public class ZkNullRepository : IZkRepository
+  {
+    #region Methods Impl
+
+    public ZkPasswordHash GetPasswordHashSet(string username)
     {
-        ZkPasswordHash GetPasswordHashSet(string username);
+      return null;
     }
 
-    public class ZkNullRepository : IZkRepository
-    {
-        public ZkPasswordHash GetPasswordHashSet(string username)
-        {
-            return null;
-        }
-    }
+    #endregion
+  }
 }

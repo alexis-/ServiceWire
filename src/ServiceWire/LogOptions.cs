@@ -1,9 +1,9 @@
 ﻿namespace ServiceWire
 {
-    public enum LogOptions
-    {
-        LogOnlyToFile,
-        LogOnlyToConsole,
-        LogToBoth
-    }
+  public enum LogOptions
+  {
+    LogOnlyToFile,
+    LogOnlyToConsole,
+    LogToBoth
+  }
 }

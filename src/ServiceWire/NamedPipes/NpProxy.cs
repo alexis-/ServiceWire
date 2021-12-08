@@ -1,10 +1,14 @@
 namespace ServiceWire.NamedPipes
 {
-    public class NpProxy
+  public class NpProxy
+  {
+    #region Methods
+
+    public static TInterface CreateProxy<TInterface>(NpEndPoint npAddress, ISerializer serializer) where TInterface : class
     {
-        public static TInterface CreateProxy<TInterface>(NpEndPoint npAddress, ISerializer serializer) where TInterface : class
-        {
-            return ProxyFactory.CreateProxy<TInterface>(typeof(NpChannel), typeof(NpEndPoint), npAddress, serializer);
-        }
+      return ProxyFactory.CreateProxy<TInterface>(typeof(NpChannel), typeof(NpEndPoint), npAddress, serializer);
     }
+
+    #endregion
+  }
 }

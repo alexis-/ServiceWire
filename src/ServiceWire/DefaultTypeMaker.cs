@@ -1,17 +1,21 @@
-﻿using System;
-
-namespace ServiceWire
+﻿namespace ServiceWire
 {
-    internal class DefaultTypeMaker
-    {
-        public object GetDefault(Type t)
-        {
-            return this.GetType().GetMethod("GetDefaultGeneric").MakeGenericMethod(t).Invoke(this, null);
-        }
+  using System;
 
-        public T GetDefaultGeneric<T>()
-        {
-            return default(T);
-        }
+  internal class DefaultTypeMaker
+  {
+    #region Methods
+
+    public object GetDefault(Type t)
+    {
+      return GetType().GetMethod("GetDefaultGeneric").MakeGenericMethod(t).Invoke(this, null);
     }
+
+    public T GetDefaultGeneric<T>()
+    {
+      return default;
+    }
+
+    #endregion
+  }
 }
